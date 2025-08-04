@@ -277,8 +277,16 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .gallery-photo,
+    .gallery-video {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
     nav ul {
-        flex-direction: column;
-        gap: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
     }
 }
