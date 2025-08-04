@@ -204,3 +204,29 @@ div#social-links {
     visibility: hidden;
     pointer-events: none;
 }
+
+#cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+#cookie-banner a {
+    color: #ffd700;
+    text-decoration: underline;
+}
+#cookie-banner button {
+    margin-left: 10px;
+    padding: 5px 15px;
+    background: #ffd700;
+    color: #222;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
