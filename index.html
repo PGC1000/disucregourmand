@@ -8,16 +8,7 @@
     <title>Di sucré & gourmand</title>
     <meta name="description" content="Découvrez des recettes sucrées et gourmandes pour tous les goûts.">
     <meta name="keywords" content="recettes, sucré, gourmand, cuisine, pâtisserie">
-    <meta name="robots" content="index, follow">
     <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCQ3S35SXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SCQ3S35SXX');
-    </script>
 </head>
 <body>
     <header>
@@ -42,11 +33,25 @@
         <p>&copy; 2025 Di Sucré & Gourmand. Tous droits réservés.</p>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner">
-        Ce site utilise des cookies et Google Analytics pour analyser le trafic, y compris votre localisation approximative.
-        <a href="#" id="privacy-link">En savoir plus</a>.
-        <button id="accept-cookies">Accepter</button>
+    <!-- Cookie Consent Banner conforme UE -->
+    <!-- Contient un lien vers la politique de confidentialité pour informer l'utilisateur de ses droits et de l'utilisation de ses données personnelles -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>Ce site utilise des cookies. Choisissez ceux que vous souhaitez autoriser.</p>
+        <button id="accept-all">Tout accepter</button>
+        <button id="reject-all">Tout refuser</button>
+        <button id="customize">Personnaliser</button>
+        <a href="privacite.html">Politique de confidentialité</a>
+    </div>
+
+    <!-- Modal de personnalisation -->
+    <div id="cookie-modal" class="cookie-modal" style="display: none;">
+        <h3>Préférences de cookies</h3>
+        <form id="cookie-preferences">
+            <label><input type="checkbox" disabled checked> Cookies nécessaires (toujours actifs)</label><br>
+            <label><input type="checkbox" name="analytics"> Cookies analytiques</label><br>
+            <label><input type="checkbox" name="marketing"> Cookies de marketing</label><br>
+            <button type="submit">Sauvegarder les préférences</button>
+        </form>
     </div>
 
     <script src="script.js"></script>
