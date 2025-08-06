@@ -1,3 +1,4 @@
+// 🎬 Gestion des vidéos
 document.querySelectorAll('.video-wrapper').forEach(wrapper => {
     const video = wrapper.querySelector('video');
     const playBtn = wrapper.querySelector('.play-btn');
@@ -38,6 +39,7 @@ document.querySelectorAll('.video-wrapper').forEach(wrapper => {
     });
 });
 
+// 🔝 Bouton retour en haut
 document.addEventListener('DOMContentLoaded', function () {
     const scrollBtn = document.querySelector('.scroll-to-top');
     function toggleScrollBtn() {
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleScrollBtn();
 });
 
+// 🍪 Cookies
 function setCookie(name, value, days) {
     const d = new Date();
     d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -120,12 +123,37 @@ function enableTracking() {
         localStorage.setItem('timeSpent', total);
     });
 
-    // Google Analytics pode ser carregado aqui se houver consentimento
     let script = document.createElement('script');
-    cript.src = 'https://www.googletagmanager.com/gtag/js?id=G-SCQ3S35SXX';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SCQ3S35SXX';
     document.head.appendChild(script);
 }
 
+// 🧠 Ajuster automatiquement l’espace sous la galerie pour ne pas coller au footer
+function ajusterEspacementVideosFooter() {
+    const galerie = document.querySelector('.gallery');
+    const footer = document.querySelector('footer');
+    if (!galerie || !footer) return;
+
+    const dernierBloc = galerie.lastElementChild;
+    if (!dernierBloc) return;
+
+    const espaceSouhaite = 60; // Espace minimum en pixels
+    const positionBasDernier = dernierBloc.getBoundingClientRect().bottom;
+    const positionHautFooter = footer.getBoundingClientRect().top;
+
+    const espaceActuel = positionHautFooter - positionBasDernier;
+
+    if (espaceActuel < espaceSouhaite) {
+        const ajout = espaceSouhaite - espaceActuel;
+        galerie.style.marginBottom = `${ajout}px`;
+    } else {
+        galerie.style.marginBottom = '0px';
+    }
+}
+
+// Initialisation
 window.addEventListener('DOMContentLoaded', () => {
     showCookieBanner();
+    ajusterEspacementVideosFooter();
 });
+window.addEventListener('resize', ajusterEspacementVideosFooter);
