@@ -124,8 +124,14 @@ function enableTracking() {
     });
 
     let script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SCQ3S35SXX';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E6DL4696HR';
+    script.async = true;
     document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E6DL4696HR');
 }
 
 // 🧠 Ajuster automatiquement l’espace sous la galerie pour ne pas coller au footer
